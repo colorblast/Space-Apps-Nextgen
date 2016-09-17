@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    r = requests.get("http://eonet.sci.gsfc.nasa.gov/api/v2.1/events")
+    r = requests.get("http://eonet.sci.gsfc.nasa.gov/api/v2.1/events").text
     data = json.loads(r)
     sys.stdout.write(data)
     return "Hello world!"
