@@ -13,7 +13,7 @@ def hello():
     events = []
     for i in range(len(data['events'])):
         events.append({'title':data['events'][i]['title'],'date':data['events'][i]['geometries'][-1]["date"]})
-    return events[0]
+    return events[0]["title"]
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
