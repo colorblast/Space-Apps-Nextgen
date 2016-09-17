@@ -10,8 +10,7 @@ app = Flask(__name__)
 def hello():
     r = requests.get("http://eonet.sci.gsfc.nasa.gov/api/v2.1/events").text
     data = json.loads(r)
-    sys.stdout.write(data)
-    return "Hello world!"
+    return data["title"]
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
