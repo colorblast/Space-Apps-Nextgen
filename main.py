@@ -1,10 +1,15 @@
 import os
 from flask import Flask
+import requests
+import simplejson as json
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
+    r = requests.get("http://eonet.sci.gsfc.nasa.gov/api/v2.1/events")
+    data = json.loads(r)
+    sys.stdout.write(data)
     return "Hello world!"
 
 if __name__ == "__main__":
