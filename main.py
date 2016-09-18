@@ -4,7 +4,7 @@ import requests
 import sys
 import simplejson as json
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 
 @app.route("/")
 def hello():
