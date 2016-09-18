@@ -49,8 +49,7 @@ function initGame(nlat, nlng, ncategory) {
 }
 
 function update() {
-    console.log('called');
-	if (down) charY++;
+	if (down) {charY++; console.log("I'm dying...");}
     if (up) charY--;
     if (right) charX++;
     if (left) charX--;
