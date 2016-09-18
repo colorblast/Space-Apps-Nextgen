@@ -56,7 +56,6 @@ function update() {
 
 	count++;
 	if (count > 200) {
-		clearInterval(loop);
 		swal.enableButtons();
 	}
 	draw();
