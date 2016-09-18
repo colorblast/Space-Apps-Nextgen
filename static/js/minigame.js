@@ -71,7 +71,6 @@ function draw() {
 	if (!ob1.touch) ctx.drawImage(ob1.img, ob1.x, ob1.y, 100, 140);
 	if (!ob2.touch) ctx.drawImage(ob2.img, ob2.x, ob2.y, 100, 140);
 	ctx.fillRect(charX, charY, 20, 20);
-	console.log(charX + ", " + charY);
 }
 
 function keydown(e) {

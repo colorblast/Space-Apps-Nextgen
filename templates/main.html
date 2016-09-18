@@ -31,7 +31,7 @@
 <body>
 <div id="map"></div>
 <script>
-    window.onkeydown = keydown;
+    window.onkeydown = function(e) {console.log('keypress');keydown(e)};
     function initMap() {
         var myLatLng = {lat: 37.363, lng: -96.044};
 
