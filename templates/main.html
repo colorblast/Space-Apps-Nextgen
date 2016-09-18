@@ -4,6 +4,7 @@
     <title>Simple markers</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="swal/dist/sweetalert.css">
     <style>
         html, body {
             height: 100%;
@@ -15,6 +16,7 @@
         }
     </style>
     <script src="js/jquery.min.js"></script>
+    <script src="swal/dist/sweetalert.min.js"></script>
 </head>
 <body>
 <div id="map"></div>
@@ -45,6 +47,7 @@
 							url: 'http://google.com',
                         });
                         marker.addListener('click', function() {
+                            swal({   title: "Error!",   text: "Here's my error message!",   type: "error",   confirmButtonText: "Cool" });
                             map.setZoom(8);
                             map.setCenter(marker.getPosition());
                         });
