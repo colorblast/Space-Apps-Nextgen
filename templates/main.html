@@ -17,6 +17,11 @@
     </style>
     <script src="js/jquery.min.js"></script>
     <script src="js/sweetalert.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            swal({   title: "Save da World",   text: "Natural Disasters are Everywhere.",   type: "info",   confirmButtonText: "Cool" });
+        });   
+    </script>
 </head>
 <body>
 <div id="map"></div>
@@ -47,9 +52,8 @@
 							url: 'http://google.com',
                         });
                         marker.addListener('click', function() {
-                            swal({   title: "Error!",   text: "Here's my error message!",   type: "error",   confirmButtonText: "Cool" });
-                            map.setZoom(8);
-                            map.setCenter(marker.getPosition());
+                            swal({   title: "Fire!",   text: "Here's my error message!",   type: "error",   confirmButtonText: "Cool" });
+                            //map.setCenter(marker.getPosition());
                         });
 
                     }
