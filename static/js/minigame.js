@@ -89,6 +89,7 @@ if ( window.event.keyCode == 39 ) {
 if ( window.event.keyCode == 40 ) {
 	down = true;
     console.log('down key pressed.')
+    charY+= 10;
 }
 
 console.log(charX + ", " + charY);
