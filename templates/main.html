@@ -31,7 +31,6 @@
 <body>
 <div id="map"></div>
 <script>
-    $('document').keydown(function(e) {console.log('keypress');keydown(e);});
     function initMap() {
         var myLatLng = {lat: 37.363, lng: -96.044};
 
@@ -58,7 +57,7 @@
 							url: 'http://google.com',
 	                        icon: '/img/alert.png'
                         });
-	                    var popupText = "<canvas id=minigameCanvas width=512 height=512></canvas>";
+	                    var popupText = "<canvas id=minigameCanvas width=512 height=512 onkeydown=keydown></canvas>";
                         marker.addListener('click', function() {
                             console.log(category);
                             if(category == "Severe Storms") {
