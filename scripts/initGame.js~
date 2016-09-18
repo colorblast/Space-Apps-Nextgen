@@ -1,8 +1,7 @@
-var http = require('http');
-
 function main() {
 if (localStorage.getItem('setup') != null) return;
 
+var http = require('http');
 var response = http.request({'url':'http://redder.scriptrapps.io/save_the_earth/request'});
 
 localStorage.setItem('allData', JSON.parse(response.body));
