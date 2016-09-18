@@ -1,0 +1,4 @@
+function initGame(lat, lng, category) {
+	console.log("Game started at: " + lat + ", " + lng + " of the category: " + category);
+	swal.enableButtons();
+}

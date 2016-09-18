@@ -5,6 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
         html, body {
             height: 100%;
@@ -14,10 +15,14 @@
         #map {
             height: 100%;
         }
+		.swal-wide {
+		    width: 850px;
+		}
     </style>
     <script src="js/jquery.min.js"></script>
     <script src="js/sweetalert.min.js"></script>
-    <script>
+    <script src=js/minigame.js></script>
+	<script>
         $( document ).ready(function() {
             swal({   title: "Save da World",   text: "Natural Disasters are Everywhere.",   type: "info",   confirmButtonText: "Cool" });
         });   
@@ -51,24 +56,28 @@
                             map: map,
                             title: response[i]['title'],
 							url: 'http://google.com',
+	                        icon: '/img/alert.png'
                         });
+	                    var popupText = "<canvas id=minigameCanvas width=512 height=512></canvas>";
                         marker.addListener('click', function() {
                             console.log(category);
                             if(category == "Severe Storms") {
-                                swal({   title: "Severe Storm Alert!",   text: "<canvas></canvas>", confirmButtonText: "Leave", html: true });
+                                swal({   title: "Severe Storm Alert!",   text: popupText, confirmButtonText: "Leave", customClass: 'swal-wide', html: true });
                             }
                             if(category == "Volcanoes") {
-                                swal({   title: "Volcano Alert!",   text: "<canvas></canvas>", confirmButtonText: "Leave", html: true });
+                                swal({   title: "Volcano Alert!",   text: popupText, confirmButtonText: "Leave", customClass: 'swal-wide', html: true });
                             }
                             if(category == "Wildfires") {
-                                swal({   title: "Wildfire Alert!",   text: "<canvas></canvas>", confirmButtonText: "Leave", html: true });
+                                swal({   title: "Wildfire Alert!",   text: popupText, confirmButtonText: "Leave", customClass: 'swal-wide', html: true });
                             }
                             if(category == "Floods") {
-                                swal({   title: "Flood Alert!",   text: "<canvas></canvas>", confirmButtonText: "Leave", html: true });
+                                swal({   title: "Flood Alert!",   text: popupText, confirmButtonText: "Leave", customClass: 'swal-wide', html: true });
                             }
                             if(category == "Manmade") {
-                                swal({title: "Humans f*cked up. We need you to stop the damage they caused.",   text: "<canvas></canvas>", confirmButtonText: "Leave", html: true});    
+                                swal({title: "Humans f*cked up. We need you to stop the damage they caused.",   text: "Don't worry about it. Someone will clean it up, right?", confirmButtonText: "Leave", customClass: 'swal-wide', html: true});    
                             }
+	                        swal.disableButtons();
+	                        initGame(response[i]['lat'], response[i]['long'], response[i]['category']);
                             //map.setCenter(marker.getPosition());
                         });
 
