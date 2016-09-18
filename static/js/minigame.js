@@ -62,7 +62,6 @@ function update() {
         var marker = new google.maps.Marker({
               position: point,
               map: map,
-              title: response[i]['title'],
 			  url: 'http://google.com',
 	          icon: '/img/check.png'
         });
