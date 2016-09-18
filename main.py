@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 import requests
 import sys
 import simplejson as json
@@ -13,7 +13,7 @@ def hello():
     events = []
     for i in range(len(data['events'])):
         events.append({'title':data['events'][i]['title'],'date':data['events'][i]['geometries'][-1]["date"]})
-    return events[0]["title"]
+    return render_template('main.html')
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
