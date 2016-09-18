@@ -51,7 +51,7 @@ function initGame(nlat, nlng, ncategory) {
 }
 
 function update() {
-	if (down) charY++;
+	if (down) {charY++; console.log('down')}
     if (up) charY--;
     if (right) charX++;
     if (left) charX--;
