@@ -49,6 +49,7 @@ function initGame(nlat, nlng, ncategory) {
 }
 
 function update() {
+    console.log('called');
 	if (down) charY++;
     if (up) charY--;
     if (right) charX++;
