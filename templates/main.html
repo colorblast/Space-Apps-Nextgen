@@ -45,6 +45,7 @@
                     if(response[i]['type'] == "Point")
                     {
                         var point = {lat: response[i]['lat'], lng:response[i]['long']}
+                        var category = response[i]['category'];
                         var marker = new google.maps.Marker({
                             position: point,
                             map: map,
@@ -52,7 +53,21 @@
 							url: 'http://google.com',
                         });
                         marker.addListener('click', function() {
-                            swal({   title: "Fire!",   text: "Here's my error message!",   type: "error",   confirmButtonText: "Cool" });
+                            if(category == "Severe Storm Alert!") {
+                                swal({   title: "Storms!",   text: "<canvas></canvas>", confirmButtonText: "Leave", html: true });
+                            }
+                            if(category == "Volcanoe Alert!") {
+                                swal({   title: "Storms!",   text: "<canvas></canvas>", confirmButtonText: "Leave", html: true });
+                            }
+                            if(category == "Wildfire Alert!") {
+                                swal({   title: "Storms!",   text: "<canvas></canvas>", confirmButtonText: "Leave", html: true });
+                            }
+                            if(category == "Flood Alert!") {
+                                swal({   title: "Storms!",   text: "<canvas></canvas>", confirmButtonText: "Leave", html: true });
+                            }
+                            if(category == "Manmade") {
+                                swal({title: "Humans f*cked up. We need you to stop the damage they caused.",   text: "<canvas></canvas>", confirmButtonText: "Leave", html: true});    
+                            }
                             //map.setCenter(marker.getPosition());
                         });
 
