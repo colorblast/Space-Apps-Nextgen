@@ -58,6 +58,11 @@ function update() {
 	if (count > 200) {
 		swal.enableButtons();
 	}
+    
+    if (charX > 100 && charX < 200 && charY > 100 && charY < 250) ob1.touch = true;
+    if (charX > 300 && charX < 400 && charY > 350 && charY < 500) ob2.touch = true;
+    
+    
 	draw();
 }
 
@@ -112,7 +117,6 @@ if ( window.event.keyCode == 39 ) {
 if ( window.event.keyCode == 40 ) {
 	down = false;
     console.log('down key pressed.')
-    charY+= 10;
 }
 
 console.log(charX + ", " + charY);
