@@ -1,9 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Save The World</title>
+    <!-- Adding css and some Javascript files-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/script.js"></script>
+
+
 </head>
 <body>
+<div id="map"></div>
+<script>
+    function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            // Set mapTypeId to SATELLITE in order
+            // to activate satellite imagery.
+            mapTypeId: 'satellite',
+            scrollwheel: false,
+            zoom: 8
+        });
+    }
 
+</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwBVItUqtBFvEKn0NZggeH_FKicFDfkmY&callback=initMap"
+        async defer></script>
 </body>
 </html>
