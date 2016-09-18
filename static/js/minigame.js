@@ -58,6 +58,11 @@ function update() {
     if (charX > 300 && charX < 400 && charY > 350 && charY < 500) ob2.touch = true;
     if (ob1.touch && ob2.touch) {
         swal.enableButtons();
+        var myLatLng = {lat: 37.363, lng: -96.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: myLatLng
+        });
         var point = {lat: lat, lng:lng}
         var marker = new google.maps.Marker({
               position: point,
