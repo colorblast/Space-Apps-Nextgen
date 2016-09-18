@@ -63,6 +63,7 @@ function update() {
 }
 
 function draw() {
+    ctx.clearRect(0,0, canvas.width, canvas.height);
 	ctx.fillStyle = "#ffffff";
 	ctx.fillRect(0, 0, 512, 512);
 	if(bgloaded) {
