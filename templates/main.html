@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>testing</title>
+    <title>Simple markers</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+        }
+    </style>
     <script type=text/javascript>
     function main() {
 if (localStorage.getItem('setup') != null) return;
@@ -18,16 +30,7 @@ main();
 
 console.log(localStorage.getItem('allData'));
     </script>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        #map {
-            height: 100%;
-        }
-    </style>
+    <script src="js/jquery.min.js"></script>
 </head>
 <body>
 <div id="map"></div>
@@ -55,7 +58,7 @@ console.log(localStorage.getItem('allData'));
                             position: point,
                             map: map,
                             title: response[i]['title'],
-                            url: 'google.com',
+							url: 'http://google.com',
                         });
                         marker.addListener('click', function() {
                             map.setZoom(8);
