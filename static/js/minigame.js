@@ -4,6 +4,7 @@ var count = 0;
 var ob1, ob2;
 var charX, charY;
 var up = false, down = false, left = false, right = false;
+var bgloaded = false;
 
 function initGame(nlat, nlng, ncategory) {
 	canvas = document.getElementById('minigameCanvas');
@@ -20,6 +21,7 @@ function initGame(nlat, nlng, ncategory) {
 			var bgurl = data['url'];
 			bgimg = new Image;
 			bgimg.src = bgurl;
+            bgloaded = true;
 		});
 	});
 	
@@ -65,7 +67,9 @@ function update() {
 function draw() {
 	ctx.fillStyle = "#ffffff";
 	ctx.fillRect(0, 0, 512, 512);
-	ctx.drawImage(bgimg, 0, 0);
+	if(bgloaded) {
+        ctx.drawImage(bgimg, 0, 0);
+    }   
 	if (!ob1.touch) ctx.drawImage(ob1.img, ob1.x, ob1.y, 100, 140);
 	if (!ob2.touch) ctx.drawImage(ob2.img, ob2.x, ob2.y, 100, 140);
 	ctx.fillRect(charX, charY, 20, 20);
