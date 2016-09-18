@@ -45,13 +45,11 @@ function initGame(nlat, nlng, ncategory) {
 		ob2.img.src = '/img/fire.png';
 	}
 
-	canvas.addEventListener('keypress', keydown, false);
-	
 	loop = setInterval(update, 17);
 }
 
 function update() {
-	if (down) {charY++; console.log('down')}
+	if (down) charY++;
     if (up) charY--;
     if (right) charX++;
     if (left) charX--;
