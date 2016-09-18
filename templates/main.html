@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
     <title>testing</title>
     <script type=text/javascript>
     function main() {
@@ -18,8 +19,69 @@ main();
 
 console.log(localStorage.getItem('allData'));
     </script>
+=======
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <script src="../static/js/jquery.min.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+        }
+    </style>
+
+>>>>>>> 0158079411a0d1e0ddd5259bca15d6e5d0209b30
 </head>
 <body>
+<div id="map"></div>
+<script>
 
+    function initMap() {
+        var myLatLng = {lat: 37.363, lng: -96.044};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: myLatLng
+        });
+        //start ajax request
+
+        $(function() {
+           $.getJSON('https://redder.scriptrapps.io/save_the_earth/request',function(data) {
+
+               var response = JSON.stringify(data['response']['result']);
+               var response = JSON.parse(response);
+               $(response).each(function (i) {
+                    if(response[i]['type'] == "Point")
+                    {
+                        var point = {lat: response[i]['lat'], lng:response[i]['long']}
+                        var marker = new google.maps.Marker({
+                            position: point,
+                            map: map,
+                            title: response[i]['title'],
+							url: 'http://google.com',
+                        });
+                        marker.addListener('click', function() {
+                            map.setZoom(8);
+                            map.setCenter(marker.getPosition());
+                        });
+
+                    }
+               })
+               console.log(response);
+           })
+        });
+
+
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARWU22abTFJ3D3D_qLJY2tnw8Adj2tw2U&callback=initMap">
+</script>
 </body>
 </html>
