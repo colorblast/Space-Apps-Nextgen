@@ -95,3 +95,25 @@ if ( window.event.keyCode == 40 ) {
 
 console.log(charX + ", " + charY);
 }
+
+function falsekey(e) {
+if ( window.event.keyCode == 37 ) {
+	left = false;
+}
+
+if ( window.event.keyCode == 38 ) {
+	up = false;
+}
+
+if ( window.event.keyCode == 39 ) {
+	right = false;
+}
+
+if ( window.event.keyCode == 40 ) {
+	down = false;
+    console.log('down key pressed.')
+    charY+= 10;
+}
+
+console.log(charX + ", " + charY);
+}

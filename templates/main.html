@@ -57,7 +57,7 @@
 							url: 'http://google.com',
 	                        icon: '/img/alert.png'
                         });
-	                    var popupText = "<canvas id=minigameCanvas width=512 height=512 onkeydown='getkey(event);' tabindex='1'></canvas>";
+	                    var popupText = "<canvas id=minigameCanvas width=512 height=512 onkeydown='getkey(event);' onkeyup='falsekey(event)' tabindex='1'></canvas>";
                         marker.addListener('click', function() {
                             console.log(category);
                             if(category == "Severe Storms") {
