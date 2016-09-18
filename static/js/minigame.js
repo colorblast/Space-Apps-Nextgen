@@ -73,20 +73,20 @@ function draw() {
 	ctx.fillRect(charX, charY, 20, 20);
 }
 
-function keydown(e) {
-if ( e.keyCode == 37 ) {
+function getkey(e) {
+if ( window.event.keyCode == 37 ) {
 	left = true;
 }
 
-if ( e.keyCode == 38 ) {
+if ( window.event.keyCode == 38 ) {
 	up = true;
 }
 
-if ( e.keyCode == 39 ) {
+if ( window.event.keyCode == 39 ) {
 	right = true;
 }
 
-if ( e.keyCode == 40 ) {
+if ( window.event.keyCode == 40 ) {
 	down = true;
     console.log('down key pressed.')
 }
