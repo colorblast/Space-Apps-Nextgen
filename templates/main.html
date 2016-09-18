@@ -4,7 +4,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Simple markers</title>
-    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
 
     <style>
         html, body {
@@ -44,7 +44,7 @@
                             position: point,
                             map: map,
                             title: response[i]['title'],
-                            url: 'google.com',
+							url: 'http://google.com',
                         });
                         marker.addListener('click', function() {
                             map.setZoom(8);
