@@ -49,7 +49,7 @@ function initGame(nlat, nlng, ncategory) {
 }
 
 function update() {
-	if (down) {charY++; console.log("I'm dying...");}
+	if (down) charY++;
     if (up) charY--;
     if (right) charX++;
     if (left) charX--;
@@ -89,6 +89,7 @@ if ( e.keyCode == 39 ) {
 
 if ( e.keyCode == 40 ) {
 	down = true;
+    console.log('down key pressed.')
 }
 
 console.log(charX + ", " + charY);
