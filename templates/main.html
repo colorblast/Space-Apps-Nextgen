@@ -53,6 +53,7 @@
 							url: 'http://google.com',
                         });
                         marker.addListener('click', function() {
+                            console.log(category);
                             if(category == "Severe Storm Alert!") {
                                 swal({   title: "Storms!",   text: "<canvas></canvas>", confirmButtonText: "Leave", html: true });
                             }
