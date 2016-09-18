@@ -56,7 +56,17 @@ function update() {
     
     if (charX > 100 && charX < 200 && charY > 100 && charY < 250) ob1.touch = true;
     if (charX > 300 && charX < 400 && charY > 350 && charY < 500) ob2.touch = true;
-    if (ob1.touch && ob2.touch) swal.enableButtons();
+    if (ob1.touch && ob2.touch) {
+        swal.enableButtons();
+        var point = {lat: lat, lng:lng}
+        var marker = new google.maps.Marker({
+              position: point,
+              map: map,
+              title: response[i]['title'],
+			  url: 'http://google.com',
+	          icon: '/img/check.png'
+        });
+    }
     
 	draw();
 }
